@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>StateMachine</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.vbproj" />
+    <ProjectReference Include="..\Interfaces\Interfaces.vbproj" />
+  </ItemGroup>
+
+</Project>

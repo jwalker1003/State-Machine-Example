@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Interfaces</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImportedNamespaces>System.ComponentModel.DataAnnotations.Schema=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,Interfaces=True</ImportedNamespaces>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Import Include="System.ComponentModel.DataAnnotations.Schema" />
+  </ItemGroup>
+
+</Project>
