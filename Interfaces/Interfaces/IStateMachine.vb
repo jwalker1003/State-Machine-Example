@@ -1,14 +1,15 @@
 ﻿Public Interface IStateMachine(Of T)
 
     ' ***********
-    ' Properties 
+    ' Properties
     ' ***********
     Property Transistions As IList(Of ITransition)
 
     ' **********
-    ' Functions 
+    ' Functions
     ' **********
     Sub NextState(ByRef obj As T)
+
     Sub ConfigureStates()
 
 End Interface

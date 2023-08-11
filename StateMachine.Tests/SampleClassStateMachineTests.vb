@@ -1,5 +1,4 @@
 ﻿Imports Interfaces
-Imports Newtonsoft.Json.Linq
 Imports NUnit.Framework
 
 <TestFixture>
@@ -20,4 +19,5 @@ Public Class SampleClassStateMachineTests
         Assert.AreEqual(States.InProgress.ToString, testSampleClass.State.Name)
 
     End Sub
+
 End Class

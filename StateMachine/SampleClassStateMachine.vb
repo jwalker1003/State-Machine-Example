@@ -1,7 +1,5 @@
 Imports Entities
 Imports Interfaces
-Imports System.Linq
-Imports System.Reflection.Emit
 
 Public Class SampleClassStateMachine : Implements IStateMachine(Of ISampleClass)
 
@@ -26,7 +24,7 @@ Public Class SampleClassStateMachine : Implements IStateMachine(Of ISampleClass)
             ' If transistion exists, set the object state to next state
             If transistion IsNot Nothing Then
 
-                ' If Guards are implemented 
+                ' If Guards are implemented
                 If GuardsContainerProp.Guards.Count() > 0 Then
 
                     ' Check Guards
@@ -47,7 +45,6 @@ Public Class SampleClassStateMachine : Implements IStateMachine(Of ISampleClass)
             Else
                 Throw New NotImplementedException()
             End If
-
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         End Try

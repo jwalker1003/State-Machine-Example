@@ -19,4 +19,5 @@ Public Class IdNotOneGuard : Implements IStateGuard(Of ISampleClass)
             Return False
         End Try
     End Function
+
 End Class
