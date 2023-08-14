@@ -1,17 +1,18 @@
-Imports Entities
 Imports Interfaces
 
 Public Class SampleClassStateMachine : Implements IStateMachine(Of ISampleClass)
 
-    Public Property GuardsContainerProp As GuardsContainer
+    Private Property GuardsContainerProp As GuardsContainer
+    Private Property Transistions As IList(Of ITransition)
 
-    Public Sub New(_guardsContainer As GuardsContainer)
+    Public Sub New(_guardsContainer As GuardsContainer,
+                   _transitions As IList(Of ITransition))
+
         GuardsContainerProp = _guardsContainer
+        Transistions = _transitions
 
-        ConfigureStates()
+        'ConfigureStates()
     End Sub
-
-    Private Property Transistions As IList(Of ITransition) Implements IStateMachine(Of ISampleClass).Transistions
 
     Public Sub NextState(ByRef sampleClass As ISampleClass) Implements IStateMachine(Of ISampleClass).NextState
         Try
@@ -50,25 +51,4 @@ Public Class SampleClassStateMachine : Implements IStateMachine(Of ISampleClass)
         End Try
 
     End Sub
-
-    Private Sub ConfigureStates() Implements IStateMachine(Of ISampleClass).ConfigureStates
-
-        Dim name As String = [Enum].GetName(GetType(States), States.Start)
-
-        Dim state1 = New State() With {.Id = States.Start, .Name = [Enum].GetName(GetType(States), States.Start)}
-        Dim state2 = New State() With {.Id = States.InProgress, .Name = [Enum].GetName(GetType(States), States.InProgress)}
-        Dim state3 = New State() With {.Id = States.Complete, .Name = [Enum].GetName(GetType(States), States.Complete)}
-
-        Transistions = New List(Of ITransition) From {
-            New Transisition With {
-                .CurrentState = state1,
-                .NextState = state2
-            },
-            New Transisition With {
-                .CurrentState = state2,
-                .NextState = state3
-            }
-        }
-    End Sub
-
 End Class
